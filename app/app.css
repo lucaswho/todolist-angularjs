@@ -29,8 +29,22 @@ form {
   height: 56px;
 }
 
+.filter {
+  padding-bottom: 80px;
+  float: right;
+}
+
+.dropdown span {
+  font-family: 'Roboto', sans-serif;
+  padding-right: 10px;
+}
+
+.dropdown .dropdown-item {
+  cursor: pointer;
+}
+
 .list-group {
-  padding: 25px 0px 80px 0px;
+  padding: 25px 0px 20px 0px;
 }
 
 li.list-group-item {

@@ -1,20 +1,20 @@
 <div class="text-center">
-  <h1>To-Do list using AngularJS</h1>
+  <h1>To-Do list using AngularJS {{vm.filterOption}}</h1>
 </div>
 
 <div class="input-group mt-3">
   <form ng-submit="vm.addActivity(); submitted= true">
-    <input type="text" id="input-activity" class="form-control" autofocus maxlength="30" placeholder="e.g. Save the world" ng-focus="vm.error = ''" ng-model="vm.newActivity">
+    <input type="text" id="input-activity" class="form-control" autofocus maxlength="30" placeholder="e.g. Save the world" ng-focus="vm.error = ''"
+      ng-model="vm.newActivity">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="submit">Add</button>
     </div>
   </form>
   <div class="error" ng-if="vm.error">{{vm.error}}</div>
 </div>
-<!--<div test-directive></div>-->
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="activity in vm.activitiesList track by $index">
+  <li class="list-group-item" ng-repeat="activity in vm.activitiesList | filter: vm.activitiesFilter track by $index">
     <span ng-class="{'strike' : activity.done}">{{activity.name}}</span>
     <div class="list-icons">
       <i class="material-icons" ng-class="activity.done ? 'red-icon' : 'green-icon'" ng-click="activity.done = !activity.done; vm.saveCurrentList()">{{activity.done ? 'undo' : 'done'}}</i>
@@ -22,3 +22,5 @@
     </div>
   </li>
 </ul>
+
+<div list-filter class="filter" option="vm.filterOption"></div>

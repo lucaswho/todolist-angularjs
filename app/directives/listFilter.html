@@ -1,0 +1,10 @@
+<div class="dropdown">
+  <span>Show: </span>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+    aria-expanded="false">
+    {{allOptions[option]}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" ng-click="setOption($index)" ng-repeat="filterOpt in allOptions track by $index">{{filterOpt}}</a>
+  </div>
+</div>

@@ -13,6 +13,22 @@ angular.module('myApp.home', ['ngRoute'])
 
     var vm = this;
 
+    vm.filterOption = 0;
+
+    vm.activitiesFilter = function (item) {
+      switch (vm.filterOption) {
+        case 0:
+          return item.done === true || item.done === false;
+          break;
+        case 1:
+          return item.done === false;
+          break;
+        case 2:
+          return item.done === true;
+          break;
+      }
+    };
+
     vm.newActivity = '';
     vm.activitiesList = JSON.parse(localStorage.getItem('activitiesList')) || [];
 
@@ -38,8 +54,8 @@ angular.module('myApp.home', ['ngRoute'])
       vm.activitiesList.splice(vm.activitiesList.indexOf(activity), 1);
       vm.saveCurrentList();
     };
-    
-    vm.saveCurrentList = function() {
+
+    vm.saveCurrentList = function () {
       localStorage.setItem('activitiesList', JSON.stringify(vm.activitiesList));
     }
 
