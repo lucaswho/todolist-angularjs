@@ -5,8 +5,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home'
 ]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/home'});
-}]);
+    $routeProvider.otherwise({ redirectTo: '/home' });
+  }]);

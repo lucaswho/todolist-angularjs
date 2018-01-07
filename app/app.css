@@ -10,8 +10,17 @@ h1 {
   background-color: aliceblue;
 }
 
+form {
+  display: inherit;
+  width: 100%;
+}
+
 .input-group {
   height: 50px;
+}
+
+input.form-control.submitted {
+border: 1px solid #FA787E;
 }
 
 .input-group-append .btn,

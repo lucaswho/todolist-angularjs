@@ -3,16 +3,16 @@
 </div>
 
 <div class="input-group mt-3">
-  <input type="text" class="form-control" placeholder="e.g. Save the world">
-  <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button">Add</button>
-  </div>
+  <form ng-submit="vm.addActivity(); submitted= true">
+    <input type="text" id="input-activity" ng-focus="submitted= false" class="form-control" ng-class="{'submitted': submitted}"
+      autofocus placeholder="e.g. Save the world" ng-model="vm.newActivity">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">Add</button>
+    </div>
+  </form>
 </div>
+<!--<div test-directive></div>-->
 
 <ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item" ng-repeat="activity in vm.activitiesList">{{activity}}</li>
 </ul>
