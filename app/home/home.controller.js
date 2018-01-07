@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.home', ['ngRoute', 'myApp.testDirective'])
+angular.module('myApp.home', ['ngRoute'])
 
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/home', {
@@ -22,6 +22,8 @@ angular.module('myApp.home', ['ngRoute', 'myApp.testDirective'])
         localStorage.setItem('activitiesList', JSON.stringify(vm.activitiesList));
         vm.newActivity = '';
         $window.document.getElementById('input-activity').focus();
+      } else {
+        vm.error = 'Please, insert your activity.'
       }
     };
 

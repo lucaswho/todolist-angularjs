@@ -19,8 +19,9 @@ form {
   height: 50px;
 }
 
-input.form-control.submitted {
-border: 1px solid #FA787E;
+.input-group .error {
+  color: red;
+  font-size: 11px;
 }
 
 .input-group-append .btn,
@@ -29,5 +30,5 @@ border: 1px solid #FA787E;
 }
 
 .list-group {
-  padding-top: 20px;
+  padding-top: 25px;
 }

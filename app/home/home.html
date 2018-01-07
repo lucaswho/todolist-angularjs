@@ -4,12 +4,12 @@
 
 <div class="input-group mt-3">
   <form ng-submit="vm.addActivity(); submitted= true">
-    <input type="text" id="input-activity" ng-focus="submitted= false" class="form-control" ng-class="{'submitted': submitted}"
-      autofocus placeholder="e.g. Save the world" ng-model="vm.newActivity">
+    <input type="text" id="input-activity" class="form-control" autofocus placeholder="e.g. Save the world" ng-change="vm.error = ''" ng-model="vm.newActivity">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="submit">Add</button>
     </div>
   </form>
+  <div class="error" ng-if="vm.error">{{vm.error}}</div>
 </div>
 <!--<div test-directive></div>-->
 
