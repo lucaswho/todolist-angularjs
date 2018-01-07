@@ -7,7 +7,7 @@ h1 {
 
 .container {
   max-width: 500px;
-  background-color: aliceblue;
+  background-color: #f7f7f7;
 }
 
 form {
@@ -31,4 +31,15 @@ form {
 
 .list-group {
   padding-top: 25px;
+}
+
+@keyframes strike {
+  from { text-decoration-color: transparent; }
+  to { text-decoration-color: auto; }
+}
+
+.strike {  
+  text-decoration: line-through;
+  animation: strike 1.5s linear;
+  color: #7a7a7a;
 }

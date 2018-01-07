@@ -4,7 +4,7 @@
 
 <div class="input-group mt-3">
   <form ng-submit="vm.addActivity(); submitted= true">
-    <input type="text" id="input-activity" class="form-control" autofocus placeholder="e.g. Save the world" ng-change="vm.error = ''" ng-model="vm.newActivity">
+    <input type="text" id="input-activity" class="form-control" autofocus maxlength="30" placeholder="e.g. Save the world" ng-focus="vm.error = ''" ng-model="vm.newActivity">
     <div class="input-group-append">
       <button class="btn btn-outline-secondary" type="submit">Add</button>
     </div>
@@ -14,5 +14,9 @@
 <!--<div test-directive></div>-->
 
 <ul class="list-group">
-  <li class="list-group-item" ng-repeat="activity in vm.activitiesList">{{activity}}</li>
+  <li class="list-group-item" ng-repeat="activity in vm.activitiesList track by $index">
+    <span ng-class="{'strike' : activity.status == 'done'}">{{activity.name}}</span>
+    <button class="btn btn-outline-secondary done" style="float: right" type="button" ng-click="activity.status = 'done'; vm.saveCurrentList()">D</button>
+    <button class="btn btn-outline-secondary" style="float: right" type="button" ng-click="vm.deleteActivity(activity)">X</button>
+  </li>
 </ul>

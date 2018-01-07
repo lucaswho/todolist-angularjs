@@ -18,18 +18,29 @@ angular.module('myApp.home', ['ngRoute'])
 
     vm.addActivity = function () {
       if (vm.newActivity != '') {
-        vm.activitiesList.push(vm.newActivity);
-        localStorage.setItem('activitiesList', JSON.stringify(vm.activitiesList));
+        var newItem = {
+          name: vm.newActivity,
+          status: 'todo'
+        }
+
+        vm.activitiesList.push(newItem);
+        vm.saveCurrentList();
+
         vm.newActivity = '';
         $window.document.getElementById('input-activity').focus();
       } else {
         vm.error = 'Please, insert your activity.'
+        $window.document.getElementById('input-activity').blur();
       }
     };
 
     vm.deleteActivity = function (activity) {
       vm.activitiesList.splice(vm.activitiesList.indexOf(activity), 1);
-      localStorage.setItem('activitiesList', JSON.stringify(vm.activitiesList));
+      vm.saveCurrentList();
     };
+    
+    vm.saveCurrentList = function() {
+      localStorage.setItem('activitiesList', JSON.stringify(vm.activitiesList));
+    }
 
   }]);
