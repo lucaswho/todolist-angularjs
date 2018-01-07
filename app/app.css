@@ -30,7 +30,7 @@ form {
 }
 
 .list-group {
-  padding-top: 25px;
+  padding: 25px 0px 80px 0px;
 }
 
 li.list-group-item {
