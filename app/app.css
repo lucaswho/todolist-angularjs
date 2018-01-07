@@ -1,3 +1,24 @@
 /* app css stylesheet */
 
+h1 {
+  padding-top: 20px;
+  font-family: 'Julius Sans One', sans-serif;
+}
 
+.container {
+  max-width: 500px;
+  background-color: aliceblue;
+}
+
+.input-group {
+  height: 50px;
+}
+
+.input-group-append .btn,
+.input-group-prepend .btn {
+  height: 50px;
+}
+
+.list-group {
+  padding-top: 20px;
+}
