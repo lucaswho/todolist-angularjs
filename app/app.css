@@ -16,7 +16,7 @@ form {
 }
 
 .input-group {
-  height: 50px;
+  height: 56px;
 }
 
 .input-group .error {
@@ -26,12 +26,58 @@ form {
 
 .input-group-append .btn,
 .input-group-prepend .btn {
-  height: 50px;
+  height: 56px;
 }
 
 .list-group {
   padding-top: 25px;
 }
+
+li.list-group-item {
+  height: 56px;
+}
+
+li.list-group-item:hover div{
+  display: block;
+}
+
+.list-icons {
+  display: none;
+  float: right;
+}
+
+.list-icons i {
+  cursor: pointer;
+}
+
+.list-icons i:first-child {
+  padding-right: 10px;
+}
+
+.grey-icon {
+  color: darkgrey;
+}
+
+.grey-icon:hover {
+  color: grey;
+}
+
+.green-icon {
+  color: mediumseagreen;
+}
+
+.green-icon:hover {
+  color: seagreen;
+}
+
+.red-icon {
+  color: #FF91A4;
+}
+
+.red-icon:hover {
+  color: #ED2939;
+}
+
 
 @keyframes strike {
   from { text-decoration-color: transparent; }

@@ -15,8 +15,10 @@
 
 <ul class="list-group">
   <li class="list-group-item" ng-repeat="activity in vm.activitiesList track by $index">
-    <span ng-class="{'strike' : activity.status == 'done'}">{{activity.name}}</span>
-    <button class="btn btn-outline-secondary done" style="float: right" type="button" ng-click="activity.status = 'done'; vm.saveCurrentList()">D</button>
-    <button class="btn btn-outline-secondary" style="float: right" type="button" ng-click="vm.deleteActivity(activity)">X</button>
+    <span ng-class="{'strike' : activity.done}">{{activity.name}}</span>
+    <div class="list-icons">
+      <i class="material-icons" ng-class="activity.done ? 'red-icon' : 'green-icon'" ng-click="activity.done = !activity.done; vm.saveCurrentList()">{{activity.done ? 'undo' : 'done'}}</i>
+      <i class="material-icons grey-icon" ng-click="vm.deleteActivity(activity)">delete</i>
+    </div>
   </li>
 </ul>

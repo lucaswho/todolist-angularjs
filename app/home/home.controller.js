@@ -20,7 +20,7 @@ angular.module('myApp.home', ['ngRoute'])
       if (vm.newActivity != '') {
         var newItem = {
           name: vm.newActivity,
-          status: 'todo'
+          done: false
         }
 
         vm.activitiesList.push(newItem);
