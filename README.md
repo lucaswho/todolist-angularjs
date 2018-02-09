@@ -1,5 +1,9 @@
 # To-Do list using AngularJS
 
+You can access the application at [GithubPages here][ghpage].
+
+===================================================================
+
 First of all, install [Node.js and the npm package manager][node].
 Then clone the project in a folder of your preference:
 
@@ -23,3 +27,4 @@ Then you can access the page at [http://localhost:8000][url].
 
 [node]: https://nodejs.org/en/
 [url]: http://localhost:8000
+[ghpage]: https://lucaswho.github.io/todolist-angularjs/app/
